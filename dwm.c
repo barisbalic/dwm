@@ -452,10 +452,10 @@ buttonpress(XEvent *e) {
 		else
 			click = ClkWinTitle;
 	}
-	else if((c = wintoclient(ev->window))) {
-		focus(c);
-		click = ClkClientWin;
-	}
+	/* else if((c = wintoclient(ev->window))) { */
+	/* 	focus(c); */
+	/* 	click = ClkClientWin; */
+	/* } */
 	for(i = 0; i < LENGTH(buttons); i++)
 		if(click == buttons[i].click && buttons[i].func && buttons[i].button == ev->button
 		&& CLEANMASK(buttons[i].mask) == CLEANMASK(ev->state))
@@ -921,7 +921,7 @@ getatomprop(Client *c, Atom prop) {
 	return atom;
 }
 
-XftColor 
+XftColor
 getcolor(const char *colstr) {
 	XftColor color;
 
